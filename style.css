@@ -9,7 +9,7 @@ h1 {
     font-size: 40px;
 }
 
-p, button {
+p, button, ul {
 	font-family: 'Cabin', sans-serif;	
 }
 
@@ -41,12 +41,13 @@ header {
 	background-color: #f7f0f0;
 	padding-top: 3em;
 	padding-right: 4em;
+	display: flex;
+	flex-direction: row;
 }
 
 #global-hero-left {
-	float: left;
 	height: 100%;
-	width: 50%;
+	width: 100%;
 	display: flex;
 	align-items: flex-end;
 	justify-content:flex-end;
@@ -61,9 +62,8 @@ header {
 }
 
 #global-hero-right {
-	float: right;
 	height: 100%;
-	width: 50%;
+	width: 100%;
 }
 
 #hero-text {
@@ -93,17 +93,31 @@ header {
 #section-perfect {
 	height: 40em;
 	background-color: white;
+	display: flex;
+	justify-content: center;
 }
 
 .section-tittle {
 	height: 8em;
 	background-color: #484349;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .inside-tittle {
 	height: 100%;
-	margin-left: 16em;
-	margin-right: 16em;
+	display: flex;
+	align-items:;
+	justify-content: center;
+	align-items: center;
+	width: 90%;
+}
+
+.inside-tittle h1 {
+	margin-bottom: 0.4em;
+	color: white;
+
 }
 
 #section-love-inside-tittle {
@@ -118,16 +132,50 @@ header {
 #section-video-body {
 	height: 28em;
 	background-color: white;
+	display: flex;
+	justify-content:center;
+	align-items:center;
 }
 
 #section-love-body {
 	height: 28em;
 	background-color: #f7f0f0;
+	display: flex;
+	justify-content:center;
+}
+
+#section-love-body-main-div{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+#section-love-body-left-div{
+	width: 55%;
+	height: 100%;
+	background-color: red;
+}
+
+#list-why-love {
+	list-style: none;
+	padding: 0;
+}
+
+#btn-learn-more {
+	 background-color: #826C87;
+}
+
+#section-love-body-right-div{
+	width: 45%;
+	height: 100%;
+	background-color: green;
 }
 
 #section-video-body {
 	height: 28em;
 	background-color: white;
+	margin-bottom: 3em;
 }
 
 footer {
@@ -154,12 +202,6 @@ header {
 
 }
 
-/* Smartphones (landscape) ----------- */
-@media only screen 
-and (min-width : 321px) {
-/* Styles */
-}
-
 /* Smartphones (portrait) ----------- */
 @media only screen 
 and (max-width : 320px) {
@@ -169,8 +211,13 @@ header {
 	background-color: pink;	
 }
 
-	#global-menu {
-	background-color: red;
+.inside-tittle {
+	width: 100%;
+}
+
+.inside-tittle h1 {
+	width: 100%;
+	font-size: 20px;
 }
 
 }
@@ -187,26 +234,6 @@ header {
 
 }
 
-/* iPads (landscape) ----------- */
-@media only screen 
-and (min-device-width : 480px) 
-and (max-device-width : 1322px) 
-and (orientation : landscape) {
-/* Styles */
-
-}
-
-/* iPads (portrait) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1322px) 
-and (orientation : portrait) {
-/* Styles */
-
-
-
-
-}
 
 /* Desktops and laptops ----------- */
 @media only screen 
@@ -242,11 +269,4 @@ header {
 	color: #484349;
 	width: 70%;
 }
-}
-
-/* iPhone 4 ----------- */
-@media
-only screen and (-webkit-min-device-pixel-ratio : 1.5),
-only screen and (min-device-pixel-ratio : 1.5) {
-/* Styles */
 }
