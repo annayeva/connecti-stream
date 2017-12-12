@@ -1,0 +1,137 @@
+body {
+	margin: 0;
+}
+
+h1 {
+	font-family: 'Lobster', cursive;
+	font-weight: 500;
+    margin-top: 0;
+    font-size: 40px;
+}
+
+p, button {
+	font-family: 'Cabin', sans-serif;	
+}
+
+button {
+	font-size:22px;
+	font-weight: 500;
+	color: white;
+	border: 0;
+	background: none;
+	box-shadow:none;
+	border-radius: 0px;
+	padding: 10px 20px 10px 20px;
+}
+
+
+header {
+	height: 5em;
+	background-color: white;
+}
+
+#global-menu {
+	height: 3em;
+	background-color: #18a999;
+}
+
+#global-hero {
+	height: 30em;
+	background-color: #f7f0f0;
+}
+
+#global-hero-left {
+	float: left;
+	height: 100%;
+	width: 50%;
+	display: flex;
+	align-items: flex-end;
+	justify-content:flex-end;
+}
+
+#hero-image-audience {
+	height: 100%;
+	width: 100%;
+	background-image: url("images/heroSlide1.svg");
+	background-repeat: no-repeat;
+	background-position: bottom right;
+	margin-left:12em; 
+	margin-top:12em;
+
+}
+
+#global-hero-right {
+	float: right;
+	height: 100%;
+	width: 50%;
+}
+
+#hero-text {
+	margin-top: 14%;
+	margin-left: 2em;
+	color: #484349;
+	width: 70%;
+}
+
+#hero-text-body {
+	font-size: 21px;
+	font-weight: bold;
+
+}
+
+#btn-try-it-out {
+	 background-color: #826C87;
+	 float: right;
+	 margin-top: 10%;
+}
+
+.divider-line {
+	height: 1em;
+	background-color: #484349;
+}
+
+
+#section-perfect {
+	height: 40em;
+	background-color: white;
+}
+
+.section-tittle {
+	height: 8em;
+	background-color: #484349;
+}
+
+.inside-tittle {
+	height: 100%;
+	margin-left: 16em;
+	margin-right: 16em;
+}
+
+#section-love-inside-tittle {
+
+	background-color: #826C87;
+}
+
+#section-video-inside-tittle {
+	background-color: #18A999;
+}
+
+#section-video-body {
+	height: 28em;
+	background-color: white;
+}
+
+#section-love-body {
+	height: 28em;
+	background-color: #f7f0f0;
+}
+
+#section-video-body {
+	height: 28em;
+	background-color: white;
+}
+
+footer {
+	height: 14em;
+	background-color: #18a999;
+}
