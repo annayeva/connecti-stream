@@ -142,6 +142,7 @@ header {
 	background-color: #f7f0f0;
 	display: flex;
 	justify-content:center;
+	padding-top: 2em;
 }
 
 #section-love-body-main-div{
@@ -154,22 +155,41 @@ header {
 #section-love-body-left-div{
 	width: 55%;
 	height: 100%;
-	background-color: red;
+	display: flex;
+	justify-content:flex-start;
+	flex-direction:column;
+	align-items:flex-end;
+	margin-right: 2em;
 }
 
 #list-why-love {
 	list-style: none;
 	padding: 0;
+	font-size: 21px;
+	color:#484349;
+	line-height: 2;
+}
+
+.list-heart-icon{
+	margin-right: 0.5em;
 }
 
 #btn-learn-more {
 	 background-color: #826C87;
+	 width: 7em;
 }
 
 #section-love-body-right-div{
 	width: 45%;
 	height: 100%;
-	background-color: green;
+}
+
+#section-love-image {
+	height: 100%;
+	width: 100%;
+	background-image: url("images/gingerGirl1.svg");
+	background-repeat: no-repeat;
+	background-position: bottom left;
 }
 
 #section-video-body {
