@@ -51,6 +51,22 @@ header {
 
 }
 
+.basic-illustration {
+	height: 10em;
+	width: 13em;
+	background-repeat: no-repeat;
+}
+
+.audience-text-box{
+	background-color: #f7f0f0;
+	font-size: 21px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content:center;
+
+}
+
 #global-menu {
 	height: 3em;
 	background-color: #18a999;
@@ -113,6 +129,32 @@ header {
 	background-color: white;
 	display: flex;
 	justify-content: center;
+}
+
+#audience-examples{
+	display: flex;
+	flex-direction: row;
+}
+
+#audience-examples-vlogger, #audience-examples-organization, #audience-examples-teacher {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 16em;
+	padding-left: 2em;
+	padding-right: 2em;
+}
+
+#vlogger-image {
+	background-image: url("images/vlogger.svg");
+}
+
+#organization-image {
+	background-image: url("images/boss.svg");
+}
+
+#teacher-image {
+	background-image: url("images/teacher.svg");
 }
 
 .section-tittle {
