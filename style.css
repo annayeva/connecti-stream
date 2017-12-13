@@ -9,7 +9,27 @@ h1 {
     font-size: 40px;
 }
 
-p, button, ul {
+h2  {
+	font-weight: 500;
+	font-family: 'Lobster', cursive;
+	font-size: 30px;
+	color: #484349;
+	margin: 0;
+}
+
+.dark-bold-header {
+	font-size:30px;
+	color: #484349;
+	font-weight: bold;
+}
+
+.white-small-text{
+	color: white;
+	font-size: 21px;
+
+}
+
+p, button, ul, .cabin-header {
 	font-family: 'Cabin', sans-serif;	
 }
 
@@ -74,8 +94,6 @@ header {
 
 #hero-text-body {
 	font-size: 21px;
-	font-weight: bold;
-
 }
 
 #btn-try-it-out {
@@ -199,9 +217,36 @@ header {
 }
 
 footer {
-	height: 14em;
+	height: 18em;
 	background-color: #18a999;
+	display: flex;
+	flex-direction:row;
+	justify-content: space-between;
 }
+
+.footer-text {
+	line-height: 2;
+}
+
+#footer-div-right{
+	margin: 3em;
+}
+
+#footer-div-left{
+	margin: 3em;
+}
+
+#SoMe-icons{
+	font-size: 3em;
+	display: flex;
+	justify-content: center;
+	color: white;
+}
+
+.SoMe-icon{
+	margin-left: 0.5em;
+}
+
 
 
 /* MEDIA QUERIES*/
