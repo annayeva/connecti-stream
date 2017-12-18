@@ -44,11 +44,44 @@ button {
 	padding: 10px 20px 10px 20px;
 }
 
+button:hover {
+	  cursor: pointer;
+}
 
 header {
 	height: 5em;
 	background-color: white;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
 
+#header-div-right{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	font-size: 20px;
+	color: #484349;
+	font-weight: bold;
+	padding-right: 1.5em;
+}
+
+#logo-div{
+	margin-left:2em;
+	margin-right:2em;
+	width: 12em;
+	height: 5em;
+	background-color: #484349;
+}
+
+#btn-login{
+	padding-right: 1em;
+	padding-left:1em;
+}
+
+#btn-signup{
+	padding-right: 1em;
+	padding-left: 1em;
 }
 
 .basic-illustration {
@@ -59,17 +92,21 @@ header {
 
 .audience-text-box{
 	background-color: #f7f0f0;
-	font-size: 21px;
+	font-size: 16px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content:center;
+	padding: 1.5em;
+	text-align: center;
+	color: #616161;
 
 }
 
 #global-menu {
 	height: 3em;
 	background-color: #18a999;
+	display: none;
 }
 
 #global-hero {
@@ -110,6 +147,7 @@ header {
 
 #hero-text-body {
 	font-size: 21px;
+	color: #616161!important;
 }
 
 #btn-try-it-out {
@@ -129,6 +167,16 @@ header {
 	background-color: white;
 	display: flex;
 	justify-content: center;
+	width: 100%;
+}
+
+#section-perfect-header {
+	text-align: center;
+	color: #484349;
+}
+
+#section-perfect-content {
+	margin-top:2em;
 }
 
 #audience-examples{
@@ -141,8 +189,8 @@ header {
 	align-items: center;
 	flex-direction: column;
 	width: 16em;
-	padding-left: 2em;
-	padding-right: 2em;
+	padding-left: 1.5em;
+	padding-right: 1.5em;
 }
 
 #vlogger-image {
@@ -283,6 +331,7 @@ footer {
 	display: flex;
 	justify-content: center;
 	color: white;
+	cursor: pointer;
 }
 
 .SoMe-icon{
@@ -348,7 +397,7 @@ and (min-width : 1322px) {
 /* Styles */
 
 header {
-	background-color: green;
+
 }
 
 #global-hero {
