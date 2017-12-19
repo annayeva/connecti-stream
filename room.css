@@ -1,0 +1,15 @@
+#room-top-div{
+	height: 30em;
+}
+
+#header-div-right i {
+	margin-left:0.6em;
+}
+
+#greet-user {
+	font-size: 18px;
+	font-weight: normal!important;
+}
+#username:hover {
+	cursor: pointer;
+}
