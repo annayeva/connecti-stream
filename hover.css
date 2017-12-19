@@ -30,4 +30,12 @@ cursor: pointer;
   height: 100%;
 }
 
+.SoMe-icon:hover{
+  color: #484349;
+}
+
+#logo-div:hover {
+  cursor: pointer;
+}
+
 
