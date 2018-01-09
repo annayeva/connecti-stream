@@ -9,7 +9,6 @@ cursor: pointer;
 }
 
 .btn-3{
-  height: 2em;
   position: relative;
   box-sizing: border-box;
   transition: all 500ms ease;

@@ -5,9 +5,21 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="hover.css">
-    <link rel="stylesheet" href="room.css">
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/hover.css">
+    <link rel="stylesheet" href="css/room.css">
+    <link rel="stylesheet" href="css/switch.css">
+
+      <script type = "text/javascript" 
+         src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+      </script>
+    
+      <script type = "text/javascript" 
+         src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js">
+      </script>
+
+      <script src="https://unpkg.com/sweetalert2@7.1.2/dist/sweetalert2.all.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Cabin|Lobster" rel="stylesheet">
@@ -25,68 +37,138 @@
 
       </header>
 
-      <div id="main-div">
+      <div id="main-room-div">
 
         <div id="global-menu">
           <div id="menu-content">
               <ul id="menu-list">
-                <li> <i class="fa fa-home menu-icon" aria-hidden="true"></i>Home</li>
-                <li> <i class="fa fa-list-ul menu-icon" aria-hidden="true"></i>My playlists</li>
-                <li> <i class="fa fa-podcast menu-icon" aria-hidden="true"></i>My rooms</li>
-                <li> <i class="fa fa-question menu-icon" aria-hidden="true"></i>Help</li>
+                <li id="home-menu-link"> <i class="fa fa-home menu-icon" aria-hidden="true"></i>Home</li>
+                <li id="playlists-menu-link"> <i class="fa fa-list-ul menu-icon" aria-hidden="true"></i>My playlists</li>
+                <li id="rooms-menu-link"> <i class="fa fa-podcast menu-icon" aria-hidden="true"></i>My rooms</li>
+                <li id="help-menu-link"> <i class="fa fa-question menu-icon" aria-hidden="true"></i>Help</li>
               </ul>
           </div>
         </div>
 
         <div id="room-page-content">
-            <div id="room-top-div"></div>
-            <div id="room-side-div">
-              <div id="playlist-section">
-                <div id="playlist-section-head"></div>
-                  <div id="playlist-section-body">
-                    <div id="playlist-name"></div>
-                    <div id="video-holder"></div>
-                    <button class="btns-playlist" id="add-video">Add video</button>
-                    <button class="btns-playlist" id="load-playlist">Load playlist</button>
-                    <button class="btns-playlist" id="save-playlist">Save playlist</button>
-                  </div>               
-              </div>
+          <div id="room-tittle"> 
+            <h1 id="room-tittle-text">My digital room tittle <i id="edit-tittle-icon" class="fa fa-pencil-square-o" aria-hidden="true"></i></h1>
+          </div>
+            <div id="room-top-div">
+                  <div id="room-top-left">
+                    <div id="stream-switch-div">
+                    <label class="switch">
+                      <input type="checkbox">
+                      <span class="slider round"></span>
+                    </label>
+                    <p>Streaming</p>
+                  </div>
+                  <div id="streaming-links">
+                    <p id="sharing-link">Share room link</p>
+                    <p id="preview-link">Preview</p>
+                  </div>
+                  </div>
+                  <div id="playlist-section-head">
+                      <div id="playlist-tittle">
+                        <p class="middle-size-header">Playlist</p>
+                        <p id="toggle-playlist" class="show-hide-icon">Hide <i class="fa fa-chevron-down" aria-hidden="true"></i></p>
+                      </div>
+                      <div id="playlist-name"><p>My playlist 123</p></div>
+                  </div>
             </div>
-            <div id="room-wide-div">
-              <div id="screen-section">
-                <div id="screen-section-head"></div>
-                <div id="screen-section-body"></div>
-              </div>
-              <div id="display-options-section">
-                <div id="display-options-head"></div>
-                <div id="display-options-body">
-                  <div id="single-display"></div>
-                  <div id="double-display"></div>
-                  <div id="2in1-display"></div>
+            <div id="room-bottom-div">
+              <div id="room-wide-div">
+                <div class="droppable" id="screen-section"></div>
+                <div id="display-options-section">
+                  <div id="display-options-head">
+                    <p class="middle-size-header">Display options</p>
+                    <p id="toggle-display-options" class="show-hide-icon">Hide <i class="fa fa-chevron-down" aria-hidden="true"></i></p>
+                  </div>
+                  <div id="display-options-body">
+                    <div class="display-option-buttons clicked-btn-display" id="single-display">
+                      <img src="images/single.png" alt="Single screen icon" width="100%" height="100%">
+                    </div>
+                    <div class="display-option-buttons" id="double-display">
+                      <img src="images/double.png" alt="Double screen icon" width="100%" height="100%">
+                    </div>
+                    <div class="display-option-buttons" id="2in1-display">
+                      <img src="images/2in1.png" alt="2in1 screen icon" width="100%" height="100%">
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div id="comments-section">
-                <div id="comments-section-head"></div>
-                <div id="comments-section-body">
-                  <div id="all-comments">
-                    <div id="user-photo"></div>
-                    <div id="user-comment">
-                      <div id="user-name"></div>
-                      <div id="comment-box">
-                        <div id="comment-message"><p>Lorem ipsum</p></div>
-                        <div id="comment-metadata"> 
-                          <p id="posting-time"></p> <p id="btn-reply"></p>
+                <div id="comments-section">
+                  <div id="comments-section-head">
+                    <p class="middle-size-header">Comments</p>
+                    <p id="toggle-comments" class="show-hide-icon">Hide <i class="fa fa-chevron-down" aria-hidden="true"></i></p>
+                  </div>
+                  <div id="comments-section-body">
+                    <div id="all-comments">
+                      <div id="user-comment-example">
+                        <div id="user-photo"></div>
+                        <div id="user-comment">
+                          <div id="user-name"></div>
+                          <div id="comment-box">
+                            <div id="comment-message"><p>Lorem ipsum</p></div>
+                            <div id="comment-metadata"> 
+                              <p id="posting-time"></p> <p id="btn-reply"></p>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div id="comment-input">
-                    <textarea id="comment-textarea"></textarea>
-                    <button id="post-comment">Post</button>
+                    <div id="comment-input">
+                      <textarea id="comment-textarea"></textarea>
+                      <button class="btn-3" id="btn-post-comment">Post</button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+              <div id="room-side-div">
+                <div id="playlist-section">
+                      <div id="video-holder">
+                        <div id="dL_-KqDhMj8" class="single-video-wrapper">
+                          <div class="single-video-pic">
+                            <img class="inner-image" src="https://img.youtube.com/vi/dL_-KqDhMj8/mqdefault.jpg" alt="Single screen icon" width="100%" height="100%">
+                            <div class="delete-video-icon"><i class="fa fa-times-circle" aria-hidden="true"></i></div>
+                            <div class="middle-icons">
+                              <div class="cc-icon"><i class="fa fa-cc" aria-hidden="true"></i></div>
+                            <div class="clock-icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
+                            </div>                           
+                          </div>
+                          <p class="single-video-tittle">Video tittle - Lorum ipsum</p>
+                        </div>
+                        <div id="BgfM3J6FrUo" class="single-video-wrapper">
+                          <div class="single-video-pic">
+                            <img class="inner-image" src="https://img.youtube.com/vi/BgfM3J6FrUo/mqdefault.jpg" alt="Single screen icon" width="100%" height="100%">
+                            <div class="delete-video-icon"><i class="fa fa-times-circle" aria-hidden="true"></i></div>
+                            <div class="middle-icons">
+                              <div class="cc-icon"><i class="fa fa-cc" aria-hidden="true"></i></div>
+                            <div class="clock-icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
+                            </div>                           
+                          </div>
+                          <p id="CrrSAc-vjG4" class="single-video-tittle">Video tittle - Lorum ipsum</p>
+                        </div>
+                        <div id="CrrSAc-vjG4" class="single-video-wrapper">
+                          <div class="single-video-pic">
+                            <img class="inner-image" src="https://img.youtube.com/vi/CrrSAc-vjG4/mqdefault.jpg" alt="Single screen icon" width="100%" height="100%">
+                            <div class="delete-video-icon"><i class="fa fa-times-circle" aria-hidden="true"></i></div>
+                            <div class="middle-icons">
+                              <div class="cc-icon"><i class="fa fa-cc" aria-hidden="true"></i></div>
+                            <div class="clock-icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
+                            </div>                           
+                          </div>
+                          <p class="single-video-tittle">Video tittle - Lorum ipsum</p>
+                        </div>
+                      </div>
+                      <div id="playlist-below-div">
+                        <button class="btns-playlist btn-3" id="btn-add-video">Add video</button>
+                        <button class="btns-playlist btn-3" id="btn-load-playlist">Load playlist</button>
+                        <button class="btns-playlist btn-3" id="btn-save-playlist">Save playlist</button>
+                      </div>
+             
+                </div>
+              </div>
+          </div>
         </div>
 
         <div class="divider-line" id="line2"></div>
@@ -121,8 +203,10 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+    <script type = "text/javascript" language = "javascript" src="script.js"></script>
+
   </body>
 </html>

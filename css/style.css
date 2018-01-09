@@ -2,14 +2,13 @@ body {
 	margin: 0;
 }
 
-h1 {
+.homepage-h1-font {
 	font-family: 'Lobster', cursive;
 	font-weight: 500;
     margin-top: 0;
     font-size: 40px;
 }
-
-h2  {
+.homepage-h2-font {
 	font-weight: 500;
 	font-family: 'Lobster', cursive;
 	font-size: 30px;
@@ -38,14 +37,20 @@ button {
 	font-weight: 500;
 	color: white;
 	border: 0;
-	background: none;
+	background-color: #826C87;
 	box-shadow:none;
-	border-radius: 0px;
+	border-radius: 0px!important;
 	padding: 10px 20px 10px 20px;
 }
 
+button:focus {outline:0;}
+
 button:hover {
 	  cursor: pointer;
+}
+
+.swal2-confirm {
+	background-color: #826C87!important;
 }
 
 header {
