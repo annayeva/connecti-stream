@@ -2,6 +2,14 @@ body {
 	margin: 0;
 }
 
+#dialog {
+	background-color: grey;
+	display: flex;
+	flex-direction: column;
+	padding: 2em;
+}
+
+
 .homepage-h1-font {
 	font-family: 'Lobster', cursive;
 	font-weight: 500;
@@ -54,11 +62,12 @@ button:hover {
 }
 
 header {
-	height: 7em;
+	min-height: 7em;
 	background-color: white;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 #header-div-left {
@@ -213,7 +222,7 @@ header {
 
 
 #section-perfect {
-	height: 40em;
+	min-height: 40em;
 	background-color: white;
 	display: flex;
 	justify-content: center;
@@ -232,6 +241,9 @@ header {
 #audience-examples{
 	display: flex;
 	flex-direction: row;
+	align-content: center;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 
 #audience-examples-vlogger, #audience-examples-organization, #audience-examples-teacher {
@@ -241,6 +253,7 @@ header {
 	width: 16em;
 	padding-left: 1.5em;
 	padding-right: 1.5em;
+	padding-top: 2em;
 }
 
 #vlogger-image {
@@ -275,11 +288,10 @@ header {
 .inside-tittle h1 {
 	margin-bottom: 0.4em;
 	color: white;
-
+	text-align: center;
 }
 
 #section-love-inside-tittle {
-
 	background-color: #826C87;
 }
 
@@ -357,11 +369,12 @@ header {
 }
 
 footer {
-	height: 16em;
+	min-height: 16em;
 	background-color: #18a999;
 	display: flex;
 	flex-direction:row;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 .footer-text {
@@ -397,13 +410,17 @@ footer {
 and (min-width : 320px) 
 and (max-width : 480px) {
 /* Styles */
-header {
-	background-color: yellow;
-	
+
+#global-hero-left {
+	display: none;
 }
 
-	#global-menu {
-	background-color: red;
+#hero-image-audience {
+	background-position:center top!important;
+}
+
+.homepage-h1-font {
+    font-size: 30px!important;
 }
 
 
@@ -414,20 +431,74 @@ header {
 and (max-width : 320px) {
 /* Styles */
 
-header {
-	background-color: pink;	
-}
 
 .inside-tittle {
 	width: 100%;
 }
 
-.inside-tittle h1 {
-	width: 100%;
-	font-size: 20px;
+.homepage-h1-font {
+    font-size: 30px!important;
+}
+
+#global-hero-left {
+	display: none;
 }
 
 }
+
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 811px)
+ {
+/* Styles */
+
+#global-hero {
+	flex-direction: column!important;
+	align-items: center;
+}
+
+#global-hero-left {
+	width: 30em!important;
+	margin-left: 2em!important;
+}
+
+#hero-text-header{
+	text-align: center;
+}
+
+#section-love-body{
+	padding-top: 0;
+}
+
+#section-love-body-right-div {
+	display: none;
+}
+#section-love-body-left-div {
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	margin-right: 0;
+}
+
+footer, header {
+	justify-content: center;
+}
+#header-div-left {
+	margin-left: 0;
+}
+
+#footer-div-left{
+	margin-bottom:0em!important;
+}
+
+#footer-div-righ{
+	margin-top:0em!important;
+}
+
+}
+
+
 
 /* iPads (portrait and landscape) ----------- */
 @media only screen 
@@ -435,8 +506,29 @@ and (min-width : 480px)
 and (max-width : 1322px) {
 /* Styles */
 
-header {
-	background-color: blue;	
+#global-hero {
+	flex-direction: row;
+}
+
+#global-hero-left {
+	width: 60em;
+}
+
+#hero-text-body {
+	font-size: 18px;
+}
+
+#hero-image-audience {
+	background-position:center top;
+}
+
+#btn-try-it-out {
+	margin-top: 0;
+	margin-bottom: 0.5em;
+}
+
+.homepage-h1-font {
+	font-size: 35px;
 }
 
 }
@@ -459,17 +551,12 @@ header {
 }
 
 
-
 }
 
 /* Large screens ----------- */
 @media only screen 
 and (min-width : 1824px) {
 /* Styles */
-
-header {
-	background-color: red;	
-}
 
 #hero-text {
 	margin-left: 2em;

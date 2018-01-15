@@ -1,20 +1,20 @@
 var roomName;
 
-
-/////ACTIONS/////
+/////EVENTS/////
 
 
 // Show/hide sections
-$("#toggle-display-options").click(function(){
-  showHideSection("#display-options-body");
-});      
-
+//$('.filter-button-group button').on('click', function (e) {
+$("#toggle-display-options").on('click', function(){
+  showHideSection("#display-options-body", this);      
+}); 
+    
 $("#toggle-comments").click(function(){
-  showHideSection("#comments-section-body");
+  showHideSection("#comments-section-body", this);
 });
 
 $("#toggle-playlist").click(function(){
-  showHideSection("#playlist-section");
+  showHideSection("#playlist-section", this);
 });
 
 // Menu linking
@@ -53,11 +53,24 @@ $('body').on('click', '.delete-video-icon', function() {
      $(this).parent().parent().remove();
 });
 
+//Login & Signup
+$("#btn-signup").click( function(){  
+  websiteSignup();
+});
+
+$("#btn-login").click( function(){  
+  websiteLogin();
+});
+
 
 /////FUNCTIONS/////
 
-function showHideSection (element) {
+function showHideSection (element, val) {
   $(element).toggle( "blind", {direction: "vertical"}, 700 );
+
+  $(val).find('span').text($(val).find('span').text() == 'Show' ? 'Hide' : 'Show');
+  $(val).find('i').toggleClass('fa-chevron-up');
+  $(val).find('i').toggleClass('fa-chevron-down')
 }
 
 function redirectToPage (url) {
@@ -68,6 +81,99 @@ function redirectToPage (url) {
 
 
 // Sweet alerts
+
+function websiteSignup() {
+
+  var userEmail;
+  var userPassword;
+
+swal({
+  title: 'Sign up',
+  html:
+    '<span>E-mail:</span><input id="email-field" placeholder="e-mail" class="swal2-input">' +
+    '<span>Password:</span><input id="password-field" type="password" placeholder="password" class="swal2-input">',
+  focusConfirm: false,
+  showCancelButton: true,
+  confirmButtonText: 'Submit',
+  preConfirm: function () {
+    return new Promise(function (resolve) {
+      resolve([
+        userEmail = $('#email-field').val(),
+        userPassword = $('#password-field').val()      
+      ])
+    })
+  }
+}).then((result) => {
+  if (result.value) {
+
+  } else if (result.dismiss === 'cancel') {
+  
+  }
+  })
+}
+
+function confirmRegistration (email) {
+   swal({
+      type: 'success',
+      title: 'You are registered user now!',
+      html: 'We sent you an e-mail on: ' + userEmail
+    })
+}
+
+
+function websiteLogin() {
+  var userEmail;
+  var userPassword;
+
+  console.log("login");
+
+  swal({
+  title: 'Log in',
+  html:
+    '<span>E-mail:</span><input id="email-field" placeholder="e-mail" class="swal2-input">' +
+    '<span>Password:</span><input id="password-field" type="password" placeholder="password" class="swal2-input">',
+  focusConfirm: false,
+  showCancelButton: true,
+  confirmButtonText: 'Submit',
+  preConfirm: function () {
+    return new Promise(function (resolve) {
+      resolve([
+        userEmail = $('#email-field').val(),
+        userPassword = $('#password-field').val()
+      ])
+    })
+  }
+}).then((result) => {
+  if (result.value) {
+    var apiLogin = "api-login.php?email="+userEmail+"&password="+userPassword;
+    console.log (apiLogin);
+    // $.getJSON(apiLogin, function(jData){
+         
+    //          console.log ( jData);
+    //          if( jData.status == "ok" ){
+    //            console.log ( "OKAY!");
+    //            console.log (jData);     
+    //          }
+          
+    //          else {
+    //            console.log ( "ERROR!");  
+    //          }
+    //        });
+
+
+  } else if (result.dismiss === 'cancel') {
+  
+  }
+  })
+}
+
+function confirmRegistration (email) {
+   swal({
+      type: 'success',
+      title: 'You are registered user now!',
+      html: 'We sent you an e-mail on: ' + userEmail
+    })
+}
 
 function addVideoToPlaylist() {
     swal({
@@ -91,7 +197,6 @@ function addVideoToPlaylist() {
   allowOutsideClick: false
 }).then((result) => {
   if (result.value) {
-
     videoUrl = result.value;
     getVideoFromYoutube(result.value);
   }
