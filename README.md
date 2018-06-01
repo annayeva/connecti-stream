@@ -1,4 +1,4 @@
-<h2>Web Devwlopment exam project. Streaming web application ConnectiStream.</h2>
+<h2>Web Development exam project. Streaming web application ConnectiStream.</h2>
 
 During the work on the Web Development exam project I conducted a research of the product and aimed to base the design on the best practices of UX/UI, paying attention to display versions for different media displays, architecture and optimization. 
 
