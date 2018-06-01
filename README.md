@@ -11,7 +11,7 @@ ConnectiStream can be used for organising webinars and online translations of a 
 ConnectiStream allows to customize video content from YouTube/Vimeo by adding subs and/or giving comments in the necessary moment, by the means of the second video, that can be livestreamed or pre-recorded.
 
 
-<h3>Problem formulation of the project:</h3>
+<h3>Problem formulation:</h3>
 
 How to build a frontend functionality for the platform meant for streaming video content to a group of people in a synchronised way, with the possibility for the stream owner to add second video, that could be used for adding additional input, such as commenting, teaching, entertaining?
 How to make such platform’s interface communicate the right image of the product and correspond to all the major interface design and user experience quality standards?
